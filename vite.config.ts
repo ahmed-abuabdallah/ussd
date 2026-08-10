@@ -6,12 +6,13 @@ import {defineConfig} from 'vite';
 export default defineConfig(() => {
   return {
     base: '/ussd/',
-    plugins: [react(), tailwindcss()],
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, '.'),
-      },
-    },
+   plugins: [
+  react(),
+  tailwindcss(),
+  VitePWA({
+    registerType: 'autoUpdate',
+  }),
+],
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modify—file watching is disabled to prevent flickering during agent edits.
