@@ -19,6 +19,15 @@
   <body class="bg-slate-100 dark:bg-slate-950 font-['Cairo',sans-serif] text-slate-800 dark:text-slate-100 antialiased selection:bg-emerald-500 selection:text-white transition-colors duration-200">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/ussd/sw.js')
+        .then(() => console.log('Service Worker registered successfully'))
+        .catch((error) => console.error('Service Worker registration failed:', error));
+    });
+  }
+</script>
   </body>
 </html>
 
