@@ -1,0 +1,6 @@
+{
+  "name": "صانع الكود المختصر USSD",
+  "description": "تطبيق لإنشاء أكواد تحويل الأموال وتسهيل التحويل عبر المحافظ الإلكترونية الفلسطينية (جوال باي وبال باي)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
