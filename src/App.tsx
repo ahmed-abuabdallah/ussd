@@ -72,7 +72,7 @@ export default function App() {
     setIsDarkMode((prev) => !prev);
   };
 
-  // Load favorites & history on mount + listen for PWA install prompt
+  // Load favorites & history on mount + listen for PWA install prompt & first visit auto popup
   useEffect(() => {
     setFavorites(getFavorites());
     setHistory(getHistory());
@@ -83,6 +83,24 @@ export default function App() {
     };
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstall);
+
+    // Auto show install popup on first visit
+    try {
+      const hasSeenPopup = localStorage.getItem('hasSeenInstallPrompt_v3');
+      if (!hasSeenPopup) {
+        const timer = setTimeout(() => {
+          setIsInstallOpen(true);
+          localStorage.setItem('hasSeenInstallPrompt_v3', 'true');
+        }, 600);
+        return () => {
+          clearTimeout(timer);
+          window.removeEventListener('beforeinstallprompt', handleBeforeInstall);
+        };
+      }
+    } catch {
+      // Fallback
+    }
+
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstall);
     };
@@ -212,7 +230,6 @@ export default function App() {
         {/* Header Banner */}
         <HeaderBanner
           onOpenHistory={() => setIsHistoryOpen(true)}
-          onOpenInstall={() => setIsInstallOpen(true)}
           isDarkMode={isDarkMode}
           onToggleDarkMode={toggleDarkMode}
           historyCount={history.length}

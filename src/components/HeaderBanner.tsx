@@ -1,9 +1,8 @@
 import React from 'react';
-import { History, Download, Sun, Moon } from 'lucide-react';
+import { History, Sun, Moon } from 'lucide-react';
 
 interface HeaderBannerProps {
   onOpenHistory: () => void;
-  onOpenInstall: () => void;
   isDarkMode: boolean;
   onToggleDarkMode: () => void;
   historyCount: number;
@@ -12,7 +11,6 @@ interface HeaderBannerProps {
 
 export const HeaderBanner: React.FC<HeaderBannerProps> = ({
   onOpenHistory,
-  onOpenInstall,
   isDarkMode,
   onToggleDarkMode,
   historyCount,
@@ -38,7 +36,7 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
           </p>
         </div>
 
-        {/* Action Buttons: Dark Mode, Install & History */}
+        {/* Action Buttons: Dark Mode & History */}
         <div className="flex items-center gap-1.5 shrink-0">
           {/* Dark Mode Toggle Button */}
           <button
@@ -53,18 +51,6 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
             ) : (
               <Moon className="w-4 h-4 text-indigo-200 transition-transform duration-300 hover:-rotate-12" />
             )}
-          </button>
-
-          {/* Install App Button */}
-          <button
-            type="button"
-            onClick={onOpenInstall}
-            className="group py-1.5 px-2 sm:px-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 active:scale-95 transition-all backdrop-blur-md border border-emerald-400/30 shadow-xs text-emerald-300 hover:text-white flex items-center gap-1"
-            title="تثبيت التطبيق على جهازك"
-            aria-label="تثبيت التطبيق"
-          >
-            <Download className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform duration-300" />
-            <span className="text-[11px] sm:text-xs font-bold whitespace-nowrap">تثبيت</span>
           </button>
 
           {/* History Button */}

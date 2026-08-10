@@ -6,7 +6,7 @@
     <link rel="icon" type="image/jpeg" href="/app_icon.jpg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/app_icon.jpg" />
     <link rel="apple-touch-icon" href="/app_icon.jpg" />
-    <link rel="manifest" href="/ussd/manifest.json" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="صانع الكود USSD" />
@@ -19,15 +19,6 @@
   <body class="bg-slate-100 dark:bg-slate-950 font-['Cairo',sans-serif] text-slate-800 dark:text-slate-100 antialiased selection:bg-emerald-500 selection:text-white transition-colors duration-200">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/ussd/sw.js')
-        .then(() => console.log('Service Worker registered successfully'))
-        .catch((error) => console.error('Service Worker registration failed:', error));
-    });
-  }
-</script>
   </body>
 </html>
 
