@@ -39,9 +39,21 @@ export default defineConfig(() => {
             },
             {
               src: '/app_icon.jpg',
+              sizes: '192x192',
+              type: 'image/jpeg',
+              purpose: 'maskable',
+            },
+            {
+              src: '/app_icon.jpg',
               sizes: '512x512',
               type: 'image/jpeg',
-              purpose: 'any maskable',
+              purpose: 'any',
+            },
+            {
+              src: '/app_icon.jpg',
+              sizes: '512x512',
+              type: 'image/jpeg',
+              purpose: 'maskable',
             },
           ],
         },
