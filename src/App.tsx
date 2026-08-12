@@ -230,6 +230,7 @@ export default function App() {
         {/* Header Banner */}
         <HeaderBanner
           onOpenHistory={() => setIsHistoryOpen(true)}
+          onOpenInstall={() => setIsInstallOpen(true)}
           isDarkMode={isDarkMode}
           onToggleDarkMode={toggleDarkMode}
           historyCount={history.length}

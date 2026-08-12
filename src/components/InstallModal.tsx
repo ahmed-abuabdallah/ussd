@@ -29,7 +29,7 @@ export const InstallModal: React.FC<InstallModalProps> = ({
 
         <div className="flex items-center gap-3">
           <img
-            src="/app_icon.jpg"
+            src="./app_icon.jpg"
             alt="أيقونة التطبيق"
             referrerPolicy="no-referrer"
             className="w-14 h-14 rounded-2xl shadow-md border border-slate-100 dark:border-slate-800 object-cover"

@@ -6,7 +6,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/USSD/',
+    base: './',
     plugins: [
       react(),
       tailwindcss(),
@@ -21,29 +21,29 @@ export default defineConfig(() => {
           background_color: '#1e1b4b',
           display: 'standalone',
           orientation: 'portrait',
-          start_url: '/USSD/',
-          scope: '/USSD/',
+          start_url: './',
+          scope: './',
           icons: [
             {
-              src: '/USSD/app_icon.jpg',
+              src: 'app_icon.jpg',
               sizes: '192x192',
               type: 'image/jpeg',
               purpose: 'any',
             },
             {
-              src: '/USSD/app_icon.jpg',
+              src: 'app_icon.jpg',
               sizes: '192x192',
               type: 'image/jpeg',
               purpose: 'maskable',
             },
             {
-              src: '/USSD/app_icon.jpg',
+              src: 'app_icon.jpg',
               sizes: '512x512',
               type: 'image/jpeg',
               purpose: 'any',
             },
             {
-              src: '/USSD/app_icon.jpg',
+              src: 'app_icon.jpg',
               sizes: '512x512',
               type: 'image/jpeg',
               purpose: 'maskable',

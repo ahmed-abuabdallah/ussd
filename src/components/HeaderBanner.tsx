@@ -1,8 +1,9 @@
 import React from 'react';
-import { History, Sun, Moon } from 'lucide-react';
+import { History, Sun, Moon, Download } from 'lucide-react';
 
 interface HeaderBannerProps {
   onOpenHistory: () => void;
+  onOpenInstall: () => void;
   isDarkMode: boolean;
   onToggleDarkMode: () => void;
   historyCount: number;
@@ -11,6 +12,7 @@ interface HeaderBannerProps {
 
 export const HeaderBanner: React.FC<HeaderBannerProps> = ({
   onOpenHistory,
+  onOpenInstall,
   isDarkMode,
   onToggleDarkMode,
   historyCount,
@@ -36,8 +38,20 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
           </p>
         </div>
 
-        {/* Action Buttons: Dark Mode & History */}
+        {/* Action Buttons: Dark Mode, Install, History */}
         <div className="flex items-center gap-1.5 shrink-0">
+          {/* Install App Button */}
+          <button
+            type="button"
+            onClick={onOpenInstall}
+            className="py-1.5 px-2 sm:px-2.5 rounded-xl bg-emerald-500/25 hover:bg-emerald-500/40 active:scale-95 transition-all backdrop-blur-md border border-emerald-400/40 shadow-xs text-emerald-200 flex items-center gap-1"
+            title="تثبيت التطبيق على الهاتف"
+            aria-label="تثبيت التطبيق"
+          >
+            <Download className="w-4 h-4 text-emerald-300 animate-pulse" />
+            <span className="text-[11px] sm:text-xs font-bold whitespace-nowrap">تثبيت</span>
+          </button>
+
           {/* Dark Mode Toggle Button */}
           <button
             type="button"
