@@ -4,11 +4,16 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -18,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -29,6 +34,9 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Show generated index.html
+        run: cat dist/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
