@@ -6,7 +6,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/ussd/',
+    base: '/',
 
     plugins: [
       react(),
@@ -27,20 +27,20 @@ export default defineConfig(() => {
           display: 'standalone',
           orientation: 'portrait',
 
-          start_url: '/ussd/',
-          scope: '/ussd/',
+          start_url: '/',
+          scope: '/',
 
           icons: [
             {
-              src: '/ussd/icon-192.png',
+              src: '/app_icon.jpg',
               sizes: '192x192',
-              type: 'image/png',
+              type: 'image/jpeg',
               purpose: 'any',
             },
             {
-              src: '/ussd/icon-512.png',
+              src: '/app_icon.jpg',
               sizes: '512x512',
-              type: 'image/png',
+              type: 'image/jpeg',
               purpose: 'any maskable',
             },
           ],
